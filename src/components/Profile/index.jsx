@@ -1,30 +1,32 @@
 import propTypes from 'prop-types';
+import './style.css';
+
 
 const Profile = ({user}) => {
 
     return (
-        <div className='Profile'>
+<div className='profile'>
   <div className="description">
     <img
       src={user.avatar}
       alt="User avatar"
       className="avatar"
     />
-    <p className="name">{user.name}</p>
-    <p className="tag">{user.tag}</p>
+    <p className="name">{user.username}</p>
+    <p className="tag">&#64;{user.tag}</p>
     <p className="location">{user.location}</p>
   </div>
 
   <ul className="stats">
-    <li>
+    <li className="item">
       <span className="label">Followers</span>
       <span className="quantity">{user.stats.followers}</span>
     </li>
-    <li>
+    <li className="item">
       <span className="label">Views</span>
       <span className="quantity">{user.stats.views}</span>
     </li>
-    <li>
+    <li className="item">
       <span className="label">Likes</span>
       <span className="quantity">{user.stats.likes}</span>
     </li>
@@ -34,13 +36,16 @@ const Profile = ({user}) => {
 };
 
 Profile.propTypes = {
-    user: propTypes.shape({
-        avatar: propTypes.string.isRequired,
-        name: propTypes.string.isRequired,
-        tag: propTypes.string.isRequired,
-        location: propTypes.string.isRequired,
-        stats: propTypes.number.isRequired,
-    })
+        avatar: propTypes.string,
+        username: propTypes.string,
+        tag: propTypes.string,
+        location: propTypes.string,
+        stats: propTypes.shape({
+          followers: propTypes.number,
+          views: propTypes.number,
+          likes: propTypes.number,
+        })
+    
 }
 
 export default Profile;

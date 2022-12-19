@@ -1,26 +1,23 @@
 import React from "react";
+import user from './data/user.json';
+import data from './data/data.json';
+import friends from './data/friends.json';
+import transactions from './data/transactions.json';
 
 import Profile from './components/Profile';
+import Statistics from './components/Statistics';
+import FriendList from './components/FriendList';
+import Transactions from './components/Transactions';
+
 
 const App = ()=> {
 
-    const user = {
-        "username": "Jacques Gluke",
-        "tag": "jgluke",
-        "location": "Ocho Rios, Jamaica",
-        "avatar": "https://cdn-icons-png.flaticon.com/512/2922/2922506.png",
-        "stats": {
-            "followers": 5603,
-            "views": 4827,
-            "likes": 1308
-        }
-    }
-
-
     return (
 <div className='App'>
-    <Profile user = {user}/>
-
+    <Profile user = {user} />
+    <Statistics stats = {data} />
+    <FriendList friends = {friends}/>
+    <Transactions transactions = {transactions}/> 
 </div>
     );
 };

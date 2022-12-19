@@ -1,0 +1,20 @@
+.table{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    height: 50px;
+    background-color: rgb(233, 245, 245);
+   
+}.head{
+    background-color: rgb(112, 177, 177);
+height: 100px;
+    color: aliceblue;
+}
+.line{
+    text-transform: capitalize;
+    height: 100px;
+
+}
+.line:nth-child(even){
+    background-color: rgb(197, 195, 195);
+}
